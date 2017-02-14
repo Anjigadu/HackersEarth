@@ -1,0 +1,64 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.LinkedList;
+import java.util.List;
+
+public class NewYearChaos {
+
+	public static void main(String...args){
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("C:/a.txt"));
+			int testCases=Integer.valueOf(reader.readLine());
+			List<String> list=new LinkedList<>();
+			for(int i=0;i<testCases;i++){
+				int size=Integer.valueOf(reader.readLine());
+				list.add(reader.readLine());
+			}
+			checkMinBribe(list);
+			} catch (Exception e) {
+			e.printStackTrace();
+			}
+		
+	}
+	
+	static void checkMinBribe(List<String> list){
+		for(String s:list){
+				String[] arr=s.split(" ");
+				int size=arr.length;
+				int[] actualArr=new int[size];
+				for(int i=0;i<size;i++){
+					actualArr[i]=Integer.valueOf(arr[i]);
+				}
+			
+			int[] idealArr=new int[size];
+			int[] shouldBeArray=new int[size];
+			int minBribe=0;
+			boolean isChaotic=false;
+			for(int i=0;i<size;i++){
+				if((i+1)!=actualArr[i] && shouldBeArray[i]!=actualArr[i]){
+					int e=actualArr[i];
+					int diff=e-i-1;
+					if(diff>0){
+						if(diff==1){
+							minBribe+=1;
+							shouldBeArray[i+1]=i+1;
+						}else if(diff==2){
+							minBribe+=2;
+							shouldBeArray[i+1]=i+1;
+							shouldBeArray[i+2]=i+2;
+						}else{
+							isChaotic=true;
+							break;
+						}
+					}else{
+						minBribe+=1;
+					}
+				}
+			}
+			if(isChaotic)
+				System.out.println("Too chaotic");
+			else System.out.println(minBribe);
+		}
+	}
+	
+}
