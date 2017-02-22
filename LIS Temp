@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+	static int N=0; 
+	static int M=0;
+	static ArrayList<Integer> array=null;
+	static int sol[];
+	public static void main(String[] args){
+		try{
+			BufferedReader reader = new BufferedReader(new FileReader("E:/AA.txt"));
+			N=Integer.valueOf(reader.readLine());
+			sol=new int[N];
+			array=new ArrayList<>(N);
+			sol[0]=1;
+			for(int i=0;i<N;i++)
+				array.add(Integer.parseInt(reader.readLine()));
+			System.out.println(LIS());
+			}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	static int LIS(){
+		int MAX=0;
+		int element=0;
+		for(int i=1;i<N;i++){
+			element=array.get(i);
+			for(int j=i-1;j>=0;j--){
+				if(array.get(i)>=array.get(j)&& sol[i]<sol[j])sol[i]=sol[j]+1;
+			}
+			if(MAX<sol[i])MAX=sol[i];
+		}
+		return MAX;
+	}
+	
+}
+
