@@ -1,7 +1,11 @@
 import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
-
+/*
+https://www.hackerrank.com/challenges/longest-increasing-subsequent
+http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+https://en.wikipedia.org/wiki/Patience_sorting
+*/
 public class LISNLOGN{
 	static int N=0; 
 	static int M=0;
