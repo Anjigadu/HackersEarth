@@ -1,6 +1,7 @@
 //https://www.hackerrank.com/challenges/making-candies
 
 //------------------------------------------------------------------Not complete
+class MakingCandies{
 static long minimumPasses(long m,long w,long p,long n){
     	long current=0;
     	long toReduce=0;
@@ -44,3 +45,4 @@ static long minimumPasses(long m,long w,long p,long n){
     	if(finalCount%factor>0)min++;
     	return min;
     }
+}
