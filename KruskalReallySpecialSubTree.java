@@ -4,6 +4,11 @@ import java.io.FileReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+//https://www.hackerrank.com/challenges/kruskalmstrsub
+
+//To detect cycle, using union find algorithm http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/
+
+
 public class KruskalReallySpecialSubTree {
 	static Graph graph[]=null;
 	static int N=0;
