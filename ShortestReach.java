@@ -29,7 +29,7 @@ public class ShortestReach {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-	}
+	} 
 	
 	public static void solve(int dataArray[][],int nodes,int stIdx){
 		boolean[] sol=new boolean[nodes];
