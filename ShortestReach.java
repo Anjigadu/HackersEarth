@@ -48,11 +48,13 @@ public class ShortestReach {
 				}
 			}
 		}
-		for(int i=1;i<nodes;i++){
-			if(dist[i]==Integer.MAX_VALUE || dist[i]==0)
-				System.out.print("-1 ");
-			else
-				System.out.print(dist[i]+" ");
+		for(int i=0;i<nodes;i++){
+			if(dist[i]!=0){
+				if(dist[i]==Integer.MAX_VALUE)
+					System.out.print("-1 ");
+				else
+					System.out.print(dist[i]+" ");
+			}
 		}
 		System.out.println();
 	}
