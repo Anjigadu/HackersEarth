@@ -23,7 +23,7 @@ public class ShortestReach {
 	        		dataArray[x][y]=6;
 	        		dataArray[y][x]=6;
 	        	}
-		        int stIdx=Integer.valueOf(reader.readLine())-1;
+		        int stIdx=Integer.valueOf(reader.readLine().trim())-1;
 	        	solve(dataArray,nodes,stIdx);
 	        }
 		}catch(Exception e){
