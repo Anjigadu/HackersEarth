@@ -16,7 +16,7 @@ public class PrimsSubTree {
     static ArrayList<Integer> reachable=new ArrayList<>();
 	public static void main(String...args){
 		try{
-	        BufferedReader reader = new BufferedReader(new FileReader(new File("E:\\a.txt")));
+	        BufferedReader reader = new BufferedReader(new FileReader(new File("D:\\a.txt")));
 	        String[] data=reader.readLine().split(" ");
 	        V=Integer.valueOf(data[0]);
 	        E=Integer.valueOf(data[1]);
@@ -111,9 +111,10 @@ public class PrimsSubTree {
 	 static void printMST(int parent[], int n, int graph[][])
 	    {
 //	        System.out.println("Edge   Weight");
-	        for (int i = 1; i < V; i++)
-	        	ans+=graph[i][parent[i]];
-//	            System.out.println(parent[i]+" - "+ i+"    "+                            graph[i][parent[i]]);
+	        for (int i = 1; i < V; i++){
+	        		System.out.println(parent[i]);
+	        		ans+=graph[i][parent[i]];
+	        	}
 	        System.out.println(ans);
 	    }	
 	
